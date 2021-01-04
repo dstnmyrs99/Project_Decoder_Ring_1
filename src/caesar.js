@@ -15,20 +15,17 @@ function caesar(input, shift = 0, encode = true) {
   }
   return input.toLowerCase().split('').map(letter => {
     if(alphabet.includes(letter)){ 
-      if(alphabet.indexOf(letter) + shift < 0){
-            
+      if(alphabet.indexOf(letter) + shift < 0){    
         return alphabet[alphabet.indexOf(letter) + shift + 26];
       }
       if(alphabet.indexOf(letter) + shift > 25){
         return alphabet[alphabet.indexOf(letter) + shift - 26];
       }
       return alphabet[alphabet.indexOf(letter) + shift];
-      
     }else{
       return letter;
     }
   }).join('');
   
 }
-console.log(caesar("mfuud sjb djfw jajwdtsj!", 5, false));
 module.exports = caesar;

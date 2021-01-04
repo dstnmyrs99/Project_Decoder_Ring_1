@@ -1,13 +1,19 @@
 /* eslint-disable strict */
 const caesar = require('../src/caesar');
-const {expect} = require('chai');
+const expect = require('chai').expect;
 
 
-describe('Caesar Shift function', ()=>{
-  it('should return false if shift value is 0, > 25, < -25, or not given', ()=>{
-    expect(caesar('false', -26)).to.be.false;
+describe('Caesar', ()=>{
+  it('should return false if shift value is < -25', ()=>{
+    expect(caesar('false', -26)).to.equal(false);
+  });
+  it('should return false if shift value is > 25', ()=>{
     expect(caesar('false', 99)).to.be.false;
+  });
+  it('should return false if shift value is 0', ()=>{
     expect(caesar('false', 0)).to.be.false;
+  });
+  it('should return false if shift value is not given', ()=>{
     expect(caesar('false')).to.be.false;
   });
 
