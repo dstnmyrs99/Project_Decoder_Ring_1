@@ -8,9 +8,9 @@ function polybius(input, encode = true) {
     'l':13,'m':23,'n':33,'o':43,'p':53,
     'q':14,'r':24,'s':34,'t':44,'u':54,
     'v':15,'w':25,'x':35,'y':45,'z':55};
-    
+
   if(!encode){
-    if(input.split(' ').join('').length % 2 === 1){
+    if(input.split(' ').join('').length % 2 === 1 || !input){
       return false;
     }
     const words = input.split(' ');

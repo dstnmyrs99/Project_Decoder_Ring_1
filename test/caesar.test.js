@@ -1,4 +1,5 @@
 /* eslint-disable strict */
+/* eslint-disable strict */
 const caesar = require('../src/caesar');
 const expect = require('chai').expect;
 
@@ -37,5 +38,16 @@ describe('Caesar', ()=>{
   it('should ignore capitalization', ()=>{
     expect(caesar('This is a secret message!', 8)).to.equal('bpqa qa i amkzmb umaaiom!');
     expect(caesar('BPQA qa I amkzmb umaaiom!', 8, false)).to.equal('this is a secret message!');
+  });
+  it(('Should return an encoded message'), () => {
+    const expected = 'wklqnixo';
+    const actual = caesar('Thinkful', 3);
+    expect(actual).to.eql(expected); 
+  });
+
+  it(('Should return a decoded message'), () => {
+    const expected = 'thinkful';
+    const actual = caesar('wklqnixo', 3, false);
+    expect(actual).to.eql(expected); 
   });
 });

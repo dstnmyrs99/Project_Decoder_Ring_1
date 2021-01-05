@@ -11,7 +11,7 @@ function substitution(input, alphabet, encode = true) {
     'y','z'
   ];
   
-  if(new Set(alphabet.split('')).size !== 26) return false;
+  if(new Set(alphabet.split('')).size !== 26 || !input || !alphabet) return false;
   
   return input.toLowerCase().split('').map(letter => {
     if(actualAlphabet.includes(letter)){

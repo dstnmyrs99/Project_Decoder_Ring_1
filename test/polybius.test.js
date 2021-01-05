@@ -32,4 +32,24 @@ describe('Polybius', ()=>{
   it('should return a string even when encoding',()=>{
     expect(polybius('Hello world')).to.be.a('string');
   });
+
+  it(('Should return an encoded message'), () => {
+    const expected = '4432423352125413';
+    const actual = polybius('thinkful');
+    expect(actual).to.eql(expected);
+  });
+
+  it(('Should return a decoded message'), () => {
+    const expected = 'th(i/j)nkful';
+    const actual = polybius('4432423352125413', false);
+    expect(actual).to.eql(expected);
+  });
+
+  it(('Should return false input is missing'), () => {
+    const expected = false;
+    const actual = polybius('', false);
+    expect(actual).to.eql(expected);
+  });
+
+
 });

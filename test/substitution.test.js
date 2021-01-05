@@ -27,4 +27,29 @@ describe('Substitution', ()=>{
     expect(substitution('thinkful', 'xoyqmcgrukswaflnthdjpzibev')).to.equal('jrufscpw');
     expect(substitution('jrufscpw', 'xoyqmcgrukswaflnthdjpzibev', false)).to.equal('thinkful');
   });
+
+  it(('Should return an encoded message'), () => {
+    const expected = 'jrufscpw';
+    const actual = substitution('thinkful', 'xoyqmcgrukswaflnthdjpzibev');
+    expect(actual).to.eql(expected);
+  });
+
+  it(('Should return a decoded message'), () => {
+    const expected = 'thinkful';
+    const actual = substitution('jrufscpw', 'xoyqmcgrukswaflnthdjpzibev', false);
+    expect(actual).to.eql(expected);
+  });
+
+  it(('Should return false input or alphabet is missing'), () => {
+    const expected = false;
+    const actual = substitution('', '');
+    expect(actual).to.eql(expected);
+  });
 });
+
+// substitution("thinkful", "xoyqmcgrukswaflnthdjpzibev"); //> 'jrufscpw'
+// substitution("You are an excellent spy", "xoyqmcgrukswaflnthdjpzibev"); //> 'elp xhm xf mbymwwmfj dne'
+// substitution("jrufscpw", "xoyqmcgrukswaflnthdjpzibev", false); //> 'thinkful'
+
+// substitution("thinkful", "short"); //> false
+// substitution("thinkful", "abcabcabcabcabcabcabcabcyz"); //> false
