@@ -13,6 +13,7 @@ function substitution(input, alphabet, encode = true) {
   
   if(new Set(alphabet.split('')).size !== 26 || !input || !alphabet) return false;
   
+  
   return input.toLowerCase().split('').map(letter => {
     if(actualAlphabet.includes(letter)){
       return encode ? alphabet[actualAlphabet.indexOf(letter)] : actualAlphabet[alphabet.indexOf(letter)];
@@ -20,5 +21,9 @@ function substitution(input, alphabet, encode = true) {
       return letter;
     }
   }).join('');
+ 
 }
 module.exports = substitution;
+
+
+

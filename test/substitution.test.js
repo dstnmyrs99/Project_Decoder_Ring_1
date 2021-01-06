@@ -46,10 +46,3 @@ describe('Substitution', ()=>{
     expect(actual).to.eql(expected);
   });
 });
-
-// substitution("thinkful", "xoyqmcgrukswaflnthdjpzibev"); //> 'jrufscpw'
-// substitution("You are an excellent spy", "xoyqmcgrukswaflnthdjpzibev"); //> 'elp xhm xf mbymwwmfj dne'
-// substitution("jrufscpw", "xoyqmcgrukswaflnthdjpzibev", false); //> 'thinkful'
-
-// substitution("thinkful", "short"); //> false
-// substitution("thinkful", "abcabcabcabcabcabcabcabcyz"); //> false
