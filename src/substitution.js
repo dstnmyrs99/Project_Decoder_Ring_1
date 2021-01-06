@@ -1,8 +1,8 @@
 /* eslint-disable strict */
 
 
-function substitution(input, alphabet, encode = true) {
 
+function substitution(input, alphabet, encode = true){
   const actualAlphabet = [
     'a','b','c','d','e','f',
     'g','h','i','j','k','l',
@@ -10,19 +10,20 @@ function substitution(input, alphabet, encode = true) {
     's','t','u','v','w','x',
     'y','z'
   ];
-  
-  if(new Set(alphabet.split('')).size !== 26 || !input || !alphabet) return false;
-  
-  
+      
+  if(new Set(alphabet.split('')).size !== 26 || !input || !alphabet || typeof(alphabet) !== 'string') return false; 
+  if(alphabet.length !== 26) return false;
+      
   return input.toLowerCase().split('').map(letter => {
-    if(actualAlphabet.includes(letter)){
+    if(letter !== ' '){
+      console.log(actualAlphabet.indexOf(letter));
       return encode ? alphabet[actualAlphabet.indexOf(letter)] : actualAlphabet[alphabet.indexOf(letter)];
     }else{
       return letter;
     }
   }).join('');
- 
-}
+}    
+console.log(substitution("abc dz", "!b$defghijklmnopqrstuvwx60", false));
 module.exports = substitution;
 
 
